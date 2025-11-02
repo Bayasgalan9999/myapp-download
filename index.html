@@ -18,7 +18,7 @@
     }
   </style>
 </head>
-<body class="min-h-screen bg-slate-50 text-slate-800">
+<body class="min-h-screen bg-amber-50 text-slate-800">
   <main class="max-w-3xl mx-auto px-5 sm:px-6 py-8 sm:py-12">
 
     <!-- HERO -->
@@ -26,14 +26,23 @@
       <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Технологи ба энэрэл — нэг зорилгод.</h1>
       <p class="mt-3 text-slate-600 dark:text-slate-300">Android дээрх ухаалаг оношлогооны апп. Гар утас болон машины Android хөгжим дээр суулгаад
         өөрийн болон бусдын машины <span class="font-semibold">батерейг бодитоор оношлоно</span>.</p>
-    </header>
+    <\/header>
+
+    <!-- SOCIAL IMPACT BANNER (moved to top) -->
+    <section class="mt-4 sm:mt-6 rounded-2xl p-4 sm:p-6 shadow-soft bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-200\/10 dark:to-orange-300\/10">
+      <h2 class="text-lg sm:text-xl font-bold">🌍 Хамтдаа гэрэлт ирээдүйг бүтээцгээе<\/h2>
+      <p class="mt-2 text-slate-700 dark:text-slate-200">Бид 21 аймагт өнчин, өрх толгойлсон хүүхдүүдэд байшин барьж өгдөг сайхан сэтгэлт 
+        <a href="https:\/\/www.facebook.com\/Orkhon.Munkhjargal" target="_blank" rel="noopener" class="underline decoration-amber-600">Orkhon Munkhjargal<\/a>
+        залуутай хамтран ажиллаж байна. Та насан туршийн лицензийг <b>₮39,000<\/b>-аар идэвхжүүлэхэд <b>₮19,000<\/b> шууд хандив болно. 
+        <b>OBDII төхөөрөмж<\/b> авахад (₮40,000) ашгийн <b>10%<\/b> мөн хүүхдийн хандивт шилжинэ. Таны худалдан авалт — <span class="font-semibold">нэг гэрийн дулаан<\/span>.<\/p>
+    <\/section>
 
     <!-- Release / Direct download card -->
     <section id="downloadCard" class="glass shadow-soft rounded-2xl p-5 sm:p-8">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div>
           <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
-            <span class="inline-flex items-center rounded-full bg-sky-100 text-sky-800 px-3 py-1 text-sm">Шинэ</span>
+            <span class="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-3 py-1 text-sm">Шинэ</span>
             <span class="inline-flex items-center rounded-full bg-slate-100 text-slate-700 px-3 py-1 text-sm dark:bg-slate-800 dark:text-slate-200">
               Хувилбар: <span id="version" class="ml-1 font-semibold">v1.0.0</span>
             </span>
@@ -54,13 +63,24 @@
           <div class="mt-4 flex flex-wrap items-center gap-3">
             <!-- Fallback link (will be replaced by JS with the latest asset) -->
             <a id="downloadBtn" rel="noopener" href="https://github.com/Bayasgalan9999/myapp-download/releases/download/v1.0.0/BatteryDiagnostic-v1.0.0.apk"
-               class="inline-flex items-center gap-2 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold px-5 py-3 transition">
+               class="inline-flex items-center gap-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-semibold px-5 py-3 transition">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M12 16a1 1 0 0 0 .707-.293l3-3a1 1 0 0 0-1.414-1.414L13 12.586V4a1 1 0 1 0-2 0v8.586l-1.293-1.293A1 1 0 0 0 8.293 12.707l3 3A1 1 0 0 0 12 16Z"/><path d="M5 20a3 3 0 0 1-3-3v-1a1 1 0 1 1 2 0v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1a1 1 0 1 1 2 0v1a3 3 0 0 1-3 3H5Z"/></svg>
               APK татах
             </a>
             <a id="releaseNotesLink" rel="noopener" href="https://github.com/Bayasgalan9999/myapp-download/releases/tag/v1.0.0"
-               class="text-sky-700 hover:text-sky-900 underline underline-offset-4 dark:text-sky-300">Release notes</a>
+               class="text-amber-700 hover:text-amber-900 underline underline-offset-4 dark:text-amber-300">Release notes</a>
           </div>
+
+          <!-- Activation instructions inserted above checksum -->
+          <div class="mt-5 rounded-xl bg-white\/80 dark:bg-slate-900\/50 border border-amber-200 dark:border-amber-900\/30 p-4">
+            <h3 class="text-base font-semibold">Идэвхжүүлэх заавар<\/h3>
+            <ol class="list-decimal ml-5 mt-2 space-y-1 text-slate-700 dark:text-slate-200">
+              <li>Аппаа суулгаад нээхэд <b>идэвхжүүлэх цонх<\/b> гарч ирнэ. Тэндээс <b>Төхөөрөмжийн ID<\/b>-г хараарай.<\/li>
+              <li>Тухайн <b>Төхөөрөмжийн ID<\/b>-гээ манай 
+                <a href="https:\/\/www.facebook.com\/zuw.onoshogoo" target="_blank" rel="noopener" class="underline decoration-amber-600">Facebook хуудасны чат<\/a> руу илгээж явуулна.<\/li>
+              <li>Төлбөр төлөгдсөн эсэхийг лавлаад бид <b>идэвхжүүлэх код<\/b>-ыг илгээнэ. Кодоо оруулаад бүрэн идэвхжүүлнэ.<\/li>
+            <\/ol>
+          <\/div>
 
           <div class="mt-4 text-sm text-slate-600 dark:text-slate-300">
             <div>
@@ -82,12 +102,6 @@
           <div class="text-xs text-slate-500 dark:text-slate-400 mt-2">QR нээгдэхгүй бол удаан дарж холбоосыг хуулна уу.</div>
         </div>
       </div>
-    </section>
-
-    <!-- SOCIAL IMPACT / DONATION -->
-    <section class="mt-8 sm:mt-10 rounded-2xl p-5 sm:p-7 shadow-soft bg-gradient-to-br from-amber-50 to-orange-100 dark:from-amber-200/10 dark:to-orange-300/10">
-      <h2 class="text-xl font-bold">🌍 Хамтдаа гэрэлт ирээдүйг бүтээцгээе</h2>
-      <p class="mt-2 text-slate-700 dark:text-slate-200">Бид 21 аймагт өнчин, өрх толгойлсон хүүхдүүдэд байшин барьж өгдөг залуутай хамтран ажиллаж байна. Та насан туршийн лицензийг <b>₮39,000</b>-аар идэвхжүүлэхэд <b>₮19,000</b> нь шууд энэ аяны санд хандив болно. <b>OBDII төхөөрөмж</b> худалдаж авахад (₮40,000) ашгийн <b>10%</b> нь мөн хандивт шилжинэ. Таны худалдан авалт — <span class="font-semibold">нэг гэрийн дулаан</span>.</p>
     </section>
 
     <!-- APP OVERVIEW -->
@@ -208,7 +222,7 @@
       <div class="shadow-soft rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur border border-slate-200 dark:border-slate-700 flex items-center justify-between p-3">
         <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Бэлэн бол татаж суулгаарай</div>
         <div class="flex items-center gap-2">
-          <a id="stickyDownload" href="#" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-medium px-4 py-2">APK татах</a>
+          <a id="stickyDownload" href="#" class="inline-flex items-center gap-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-medium px-4 py-2">APK татах</a>
           <a id="stickyNotes" href="#" class="text-sky-700 dark:text-sky-300 underline underline-offset-4 text-xs">Release notes</a>
         </div>
       </div>
