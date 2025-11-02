@@ -1,3 +1,58 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Миний Андройд Апп – APK татах</title>
+  <meta name="description" content="Утсан дээрээ батерей оношилгооны ухаалаг шууд татаж суулгаад батерейгаа оношлоорой. Хандивтай борлуулалт." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2310b981'/%3E%3Ctext x='50' y='58' font-size='50' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'%3EA%3C/text%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{
+      --bg: #f6faf8;           /* overall bg */
+      --card: #ffffff;         /* card bg */
+      --line: #e7efe9;         /* soft border */
+      --text: #0f172a;         /* slate-900 */
+      --accent: #10b981;       /* emerald-500 */
+      --accent-dark:#059669;   /* emerald-600 */
+      --mint:#a7f3d0;          /* emerald-200 */
+      --lime:#84cc16;          /* lime-500 */
+      --muted:#64748b;         /* slate-500 */
+    }
+    .shadow-soft { box-shadow: 0 12px 30px rgba(2,6,23,.08); }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,.85); }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    body { background: radial-gradient(1000px 500px at 80% -10%, #d1fae5 0%, transparent 60%) var(--bg); color: var(--text); }
+    .card { background: var(--card); border: 1px solid var(--line); }
+    .badge { background: #ecfdf5; color: var(--accent); }
+    .btn-primary { background: var(--accent); }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .link-accent { color: var(--accent); }
+    .link-accent:hover { color: var(--accent-dark); }
+    .progress { height: 6px; background: #e8f5ef; border-radius: 999px; overflow: hidden; }
+    .progress > span { display:block; height:100%; background: linear-gradient(90deg, var(--accent), var(--lime)); }
+    img.rounded-xl { border:1px solid var(--line); }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0b1220; color:#e2e8f0; }
+      .card, .glass { background: rgba(15,23,42,.6); border-color: rgba(148,163,184,.2); }
+      .shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+      .badge { background: rgba(16,185,129,.15); color:#a7f3d0; }
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <main class="max-w-3xl mx-auto px-5 sm:px-6 py-8 sm:py-12">
+
+    <!-- HERO -->
+    <header class="mb-6 sm:mb-8 text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Технологи ба энэрэл — нэг зорилгод.</h1>
+      <p class="mt-3 text-slate-600">
+        "ZUW" ухаалаг оношлогооны апп. Гар утас болон машины Android хөгжим дээр суулгаад
+        өөрийн болон бусдын машины <span class="font-semibold text-slate-800">батерейг бодитоор оношлоорой</span>.
+      </p>
+      <!-- subtle progress/impact hint (optional visual) -->
+      <div class="mt-4 progress mx-auto max-w-xs"><span style="width:44%"></span></div>
+    </header>
 <!-- HYBRID BATTERY ILLUSTRATION (inline SVG) -->
 <section class="mt-4 sm:mt-6">
   <div class="rounded-2xl shadow-soft overflow-hidden" style="background:linear-gradient(180deg,#ecfdf5 0%, #ffffff 100%); border:1px solid #e7efe9">
@@ -97,3 +152,120 @@
     </svg>
   </div>
 </section>
+
+    <!-- SOCIAL IMPACT -->
+    <section class="mt-4 sm:mt-6 rounded-2xl p-4 sm:p-6 shadow-soft card">
+      <h2 class="text-lg sm:text-xl font-bold">🌍 Хамтдаа гэрэлт ирээдүйг бүтээцгээе</h2>
+      <p class="mt-2 text-slate-700">
+        21 аймагт өнчин, өрх толгойлсон хүүхдүүдэд байшин барьж өгдөг сайхан сэтгэлт
+        <a href="https://www.facebook.com/Orkhon.Munkhjargal" target="_blank" rel="noopener" class="underline link-accent">Orkhon Munkhjargal</a>
+        залуутай хамтран ажиллаж байна. Та насан туршийн лицензийг <b>₮39,000</b>-аар идэвхжүүлэхэд
+        <b>₮19,000</b> шууд хүүхдүүдийн маань ирээдүйд хандив болно. <b>OBDII төхөөрөмж</b> авахад (₮40,000) ашгийн
+        <b>10%</b> мөн л хүүхдүүдийн маань хандивт шилжинэ. Таны худалдан авалт —
+        <span class="font-semibold">хүүхдийн инээд, ирээдүйн баталгаа болно</span>.
+      </p>
+
+      <img src="./1.jpg" alt="Сайн үйлсийн аяны гэр бүлийн зураг" class="mt-4 w-full rounded-xl shadow-soft">
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="downloadCard" class="mt-6 glass shadow-soft rounded-2xl p-5 sm:p-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+            <span class="inline-flex items-center rounded-full badge px-3 py-1 text-sm">Шинэ</span>
+            <span class="inline-flex items-center rounded-full bg-slate-100 text-slate-700 px-3 py-1 text-sm dark:bg-slate-800 dark:text-slate-200">
+              Хувилбар: <span id="version" class="ml-1 font-semibold">v1.0.0</span>
+            </span>
+            <span class="inline-flex items-center rounded-full bg-slate-100 text-slate-700 px-3 py-1 text-sm dark:bg-slate-800 dark:text-slate-200">
+              Шинэчлэл: <span id="updated" class="ml-1">2025-11-01</span>
+            </span>
+            <span class="inline-flex items-center rounded-full bg-slate-100 text-slate-700 px-3 py-1 text-sm dark:bg-slate-800 dark:text-slate-200">
+              Min Android: <span class="ml-1">8.0 (API 26)</span>
+            </span>
+            <span id="dlBadge" class="hidden inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 px-3 py-1 text-sm">
+              Таталт: <span id="downloadCount" class="ml-1 font-semibold">0</span>
+            </span>
+          </div>
+
+          <h2 class="mt-5 text-xl font-semibold">Шууд татах</h2>
+          <p class="mt-1 text-slate-600">Android төхөөрөмж дээрээ <b>APK</b>-г шууд татаж суулгаарай. Хөтөчөөс асуувал Unknown apps-ийг зөвшөөрнө.</p>
+
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <a id="downloadBtn" rel="noopener" href="https://github.com/Bayasgalan9999/myapp-download/releases/download/v1.0.0/BatteryDiagnostic-v1.0.0.apk"
+               class="inline-flex items-center gap-2 rounded-xl btn-primary text-white font-semibold px-5 py-3 transition shadow-soft">
+              ⬇ APK татах
+            </a>
+            <a id="releaseNotesLink" rel="noopener" href="https://github.com/Bayasgalan9999/myapp-download/releases/tag/v1.0.0"
+               class="link-accent underline underline-offset-4">Release notes</a>
+          </div>
+
+          <!-- Activation guide -->
+          <div class="mt-5 rounded-xl card p-4">
+            <h3 class="text-base font-semibold">Идэвхжүүлэх заавар</h3>
+            <ol class="list-decimal ml-5 mt-2 space-y-1 text-slate-700">
+              <li>Аппаа суулгаад нээхэд <b>идэвхжүүлэх цонх</b> гарч ирнэ. Тэндээс <b>Төхөөрөмжийн ID</b>-г хараарай.</li>
+              <li>Тухайн <b>Төхөөрөмжийн ID</b>-гээ манай
+                <a href="https://www.facebook.com/zuw.onoshogoo" target="_blank" rel="noopener" class="underline link-accent">Facebook хуудасны чат</a>
+                руу илгээнэ.
+              </li>
+              <li>Төлбөр төлөгдсөн эсэхийг лавлаад бид <b>идэвхжүүлэх код</b>-ыг илгээнэ. Кодоо оруулаад бүрэн идэвхжүүлнэ.</li>
+            </ol>
+            <div class="mt-3 text-sm text-slate-600">
+              <span class="mono text-slate-800">SHA-256</span> чекзам:
+              <code class="mono" id="sha256">e31c9f649ca750f7bded150e56b0...</code>
+              <button id="copySha" type="button" class="ml-2 inline-flex items-center rounded-md border border-slate-200 px-2 py-1 text-xs hover:bg-slate-100">Copy</button>
+              <span id="copyShaMsg" class="ml-2 text-xs text-emerald-600 hidden">Хуулагдлаа</span>
+              <div class="mt-2">Файлын хэмжээ: <span id="filesize">64.7 MB</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QR -->
+        <div class="md:w-56 md:shrink-0 self-center text-center hidden md:block">
+          <div class="text-sm text-slate-600 mb-2">Утсаараа скан хийж татах</div>
+          <img id="qr" class="mx-auto rounded-xl border" style="border-color:var(--line)" width="224" height="224"
+               alt="APK татах QR код"
+               src="https://api.qrserver.com/v1/create-qr-code/?size=224x224&data=https://github.com/Bayasgalan9999/myapp-download/releases/download/v1.0.0/BatteryDiagnostic-v1.0.0.apk"/>
+          <div class="text-xs text-slate-500 mt-2">QR нээгдэхгүй бол удаан дарж холбоосыг хуулна уу.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APP GALLERY -->
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold mb-4 text-center">📱 Аппын танилцуулга</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <img src="./2.png" alt="Аппын дэлгэц 1" loading="lazy" decoding="async"
+             class="rounded-xl shadow-soft border" style="border-color:var(--line)">
+        <img src="./3.png" alt="Аппын дэлгэц 2" loading="lazy" decoding="async"
+             class="rounded-xl shadow-soft border" style="border-color:var(--line)">
+        <img src="./4.png" alt="Аппын дэлгэц 3" loading="lazy" decoding="async"
+             class="rounded-xl shadow-soft border" style="border-color:var(--line)">
+        <img src="./e7386156-0784-4787-a1b1-837692841f06.png" alt="Аппын дэлгэц 4" loading="lazy" decoding="async"
+             class="rounded-xl shadow-soft border" style="border-color:var(--line)">
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-10 text-center text-sm text-slate-500">
+      © Таны байгууллага. Бүх эрх хуулиар хамгаалагдсан.
+    </footer>
+  </main>
+
+  <!-- (Optional) sticky bar could be re-added later; links unchanged -->
+  <script>
+    // Copy checksum
+    document.addEventListener('click', (e) => {
+      if (e.target && e.target.id === 'copySha') {
+        const text = document.getElementById('sha256').textContent.trim();
+        navigator.clipboard.writeText(text).then(() => {
+          const msg = document.getElementById('copyShaMsg');
+          msg.classList.remove('hidden');
+          setTimeout(() => msg.classList.add('hidden'), 1500);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
