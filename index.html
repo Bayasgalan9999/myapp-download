@@ -10,9 +10,9 @@
   <style>
     .shadow-soft { box-shadow: 0 10px 30px rgba(2,6,23,.12); }
     .glass { backdrop-filter: blur(12px); background: rgba(255,255,255,.75); }
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .mono { font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; }
     @media (prefers-color-scheme: dark) {
-      body { background: #0b1220; color: #e2e8f0; }
+      body { background:#0b1220; color:#e2e8f0; }
       .glass { background: rgba(15,23,42,.5); }
       .shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,.3); }
     }
@@ -22,23 +22,28 @@
   <main class="max-w-3xl mx-auto px-5 sm:px-6 py-8 sm:py-12">
 
     <!-- HERO -->
-    <header class="mb-8 sm:mb-10 text-center">
+    <header class="mb-6 sm:mb-8 text-center">
       <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Технологи ба энэрэл — нэг зорилгод.</h1>
-      <p class="mt-3 text-slate-600 dark:text-slate-300">Android дээрх ухаалаг оношлогооны апп. Гар утас болон машины Android хөгжим дээр суулгаад
+      <p class="mt-3 text-slate-700">Android дээрх ухаалаг оношлогооны апп. Гар утас болон машины Android хөгжим дээр суулгаад
         өөрийн болон бусдын машины <span class="font-semibold">батерейг бодитоор оношлоно</span>.</p>
-    <\/header>
+    </header>
 
-    <!-- SOCIAL IMPACT BANNER (moved to top) -->
-    <section class="mt-4 sm:mt-6 rounded-2xl p-4 sm:p-6 shadow-soft bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-200\/10 dark:to-orange-300\/10">
-      <h2 class="text-lg sm:text-xl font-bold">🌍 Хамтдаа гэрэлт ирээдүйг бүтээцгээе<\/h2>
-      <p class="mt-2 text-slate-700 dark:text-slate-200">Бид 21 аймагт өнчин, өрх толгойлсон хүүхдүүдэд байшин барьж өгдөг сайхан сэтгэлт 
-        <a href="https:\/\/www.facebook.com\/Orkhon.Munkhjargal" target="_blank" rel="noopener" class="underline decoration-amber-600">Orkhon Munkhjargal<\/a>
-        залуутай хамтран ажиллаж байна. Та насан туршийн лицензийг <b>₮39,000<\/b>-аар идэвхжүүлэхэд <b>₮19,000<\/b> шууд хандив болно. 
-        <b>OBDII төхөөрөмж<\/b> авахад (₮40,000) ашгийн <b>10%<\/b> мөн хүүхдийн хандивт шилжинэ. Таны худалдан авалт — <span class="font-semibold">нэг гэрийн дулаан<\/span>.<\/p>
-    <\/section>
+    <!-- SOCIAL IMPACT (hero-д даруй дараа) -->
+    <section class="mt-4 sm:mt-6 rounded-2xl p-4 sm:p-6 shadow-soft bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-200/10 dark:to-orange-300/10">
+      <h2 class="text-lg sm:text-xl font-bold">🌍 Хамтдаа гэрэлт ирээдүйг бүтээцгээе</h2>
+      <p class="mt-2 text-slate-700">
+        Бид 21 аймагт өнчин, өрх толгойлсон хүүхдүүдэд байшин барьж өгдөг сайхан сэтгэлт
+        <a href="https://www.facebook.com/Orkhon.Munkhjargal" target="_blank" rel="noopener" class="underline decoration-amber-600">Orkhon Munkhjargal</a>
+        залуутай хамтран ажиллаж байна. Та насан туршийн лицензийг <b>₮39,000</b>-аар идэвхжүүлэхэд <b>₮19,000</b> шууд хандив болно.
+        <b>OBDII төхөөрөмж</b> авахад (₮40,000) ашгийн <b>10%</b> мөн хүүхдийн хандивт шилжинэ. Таны худалдан авалт — <span class="font-semibold">нэг гэрийн дулаан</span>.
+      </p>
 
-    <!-- Release / Direct download card -->
-    <section id="downloadCard" class="glass shadow-soft rounded-2xl p-5 sm:p-8">
+      <!-- ТАНЫ ЗУРАГ: репогийн үндсэн хавтсанд байгаа 1.jpg -->
+      <img src="./1.jpg" alt="Сайн үйлсийн аяны гэр бүлийн зураг" class="mt-4 w-full rounded-xl border border-amber-200 shadow-soft">
+    </section>
+
+    <!-- DOWNLOAD CARD -->
+    <section id="downloadCard" class="mt-6 glass shadow-soft rounded-2xl p-5 sm:p-8">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div>
           <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
@@ -58,10 +63,10 @@
           </div>
 
           <h2 class="mt-5 text-xl font-semibold">Шууд татах</h2>
-          <p class="mt-1 text-slate-600 dark:text-slate-300">Android төхөөрөмж дээрээ <b>APK</b>-г шууд татаж суулгаарай. Хөтөчөөс асуувал Unknown apps-ийг зөвшөөрнө.</p>
+          <p class="mt-1 text-slate-700">Android төхөөрөмж дээрээ <b>APK</b>-г шууд татаж суулгаарай. Хөтөчөөс асуувал Unknown apps-ийг зөвшөөрнө.</p>
 
           <div class="mt-4 flex flex-wrap items-center gap-3">
-            <!-- Fallback link (will be replaced by JS with the latest asset) -->
+            <!-- Fallback link (JS автоматаар шинэчилнэ) -->
             <a id="downloadBtn" rel="noopener" href="https://github.com/Bayasgalan9999/myapp-download/releases/download/v1.0.0/BatteryDiagnostic-v1.0.0.apk"
                class="inline-flex items-center gap-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-semibold px-5 py-3 transition">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M12 16a1 1 0 0 0 .707-.293l3-3a1 1 0 0 0-1.414-1.414L13 12.586V4a1 1 0 1 0-2 0v8.586l-1.293-1.293A1 1 0 0 0 8.293 12.707l3 3A1 1 0 0 0 12 16Z"/><path d="M5 20a3 3 0 0 1-3-3v-1a1 1 0 1 1 2 0v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1a1 1 0 1 1 2 0v1a3 3 0 0 1-3 3H5Z"/></svg>
@@ -71,35 +76,35 @@
                class="text-amber-700 hover:text-amber-900 underline underline-offset-4 dark:text-amber-300">Release notes</a>
           </div>
 
-          <!-- Activation instructions inserted above checksum -->
-          <div class="mt-5 rounded-xl bg-white\/80 dark:bg-slate-900\/50 border border-amber-200 dark:border-amber-900\/30 p-4">
-            <h3 class="text-base font-semibold">Идэвхжүүлэх заавар<\/h3>
-            <ol class="list-decimal ml-5 mt-2 space-y-1 text-slate-700 dark:text-slate-200">
-              <li>Аппаа суулгаад нээхэд <b>идэвхжүүлэх цонх<\/b> гарч ирнэ. Тэндээс <b>Төхөөрөмжийн ID<\/b>-г хараарай.<\/li>
-              <li>Тухайн <b>Төхөөрөмжийн ID<\/b>-гээ манай 
-                <a href="https:\/\/www.facebook.com\/zuw.onoshogoo" target="_blank" rel="noopener" class="underline decoration-amber-600">Facebook хуудасны чат<\/a> руу илгээж явуулна.<\/li>
-              <li>Төлбөр төлөгдсөн эсэхийг лавлаад бид <b>идэвхжүүлэх код<\/b>-ыг илгээнэ. Кодоо оруулаад бүрэн идэвхжүүлнэ.<\/li>
-            <\/ol>
-          <\/div>
+          <!-- Идэвхжүүлэх заавар -->
+          <div class="mt-5 rounded-xl bg-white/80 dark:bg-slate-900/50 border border-amber-200 dark:border-amber-900/30 p-4">
+            <h3 class="text-base font-semibold">Идэвхжүүлэх заавар</h3>
+            <ol class="list-decimal ml-5 mt-2 space-y-1 text-slate-700">
+              <li>Аппаа суулгаад нээхэд <b>идэвхжүүлэх цонх</b> гарч ирнэ. Тэндээс <b>Төхөөрөмжийн ID</b>-г хараарай.</li>
+              <li><b>Төхөөрөмжийн ID</b>-гээ манай
+                <a href="https://www.facebook.com/zuw.onoshogoo" target="_blank" rel="noopener" class="underline decoration-amber-600">Facebook хуудасны чат</a> руу илгээнэ.</li>
+              <li>Төлбөр төлөгдсөн эсэхийг лавлаад бид <b>идэвхжүүлэх код</b>-ыг илгээнэ. Кодоо оруулаад бүрэн идэвхжүүлнэ.</li>
+            </ol>
+          </div>
 
-          <div class="mt-4 text-sm text-slate-600 dark:text-slate-300">
+          <div class="mt-4 text-sm text-slate-700">
             <div>
-              <span class="mono text-slate-800 dark:text-slate-100">SHA-256</span> чекзам:
+              <span class="mono text-slate-800">SHA-256</span> чекзам:
               <code class="mono" id="sha256">e31c9f649ca750f7bded150e56b0...</code>
-              <button id="copySha" type="button" class="ml-2 inline-flex items-center rounded-md border border-slate-200 px-2 py-1 text-xs hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800">Copy</button>
+              <button id="copySha" type="button" class="ml-2 inline-flex items-center rounded-md border border-slate-200 px-2 py-1 text-xs hover:bg-slate-100">Copy</button>
               <span id="copyShaMsg" class="ml-2 text-xs text-emerald-600 hidden">Хуулагдлаа</span>
             </div>
             <div class="mt-1">Файлын хэмжээ: <span id="filesize">64.7 MB</span></div>
           </div>
         </div>
 
-        <!-- QR code panel (desktop only) -->
+        <!-- QR (desktop) -->
         <div class="md:w-56 md:shrink-0 self-center text-center hidden md:block">
-          <div class="text-sm text-slate-600 dark:text-slate-300 mb-2">Утсаараа скан хийж татах</div>
-          <img id="qr" class="mx-auto rounded-xl border border-slate-200 dark:border-slate-700" width="224" height="224"
+          <div class="text-sm text-slate-600 mb-2">Утсаараа скан хийж татах</div>
+          <img id="qr" class="mx-auto rounded-xl border border-slate-200" width="224" height="224"
                alt="APK татах QR код"
                src="https://api.qrserver.com/v1/create-qr-code/?size=224x224&data=https://github.com/Bayasgalan9999/myapp-download/releases/download/v1.0.0/BatteryDiagnostic-v1.0.0.apk"/>
-          <div class="text-xs text-slate-500 dark:text-slate-400 mt-2">QR нээгдэхгүй бол удаан дарж холбоосыг хуулна уу.</div>
+          <div class="text-xs text-slate-500 mt-2">QR нээгдэхгүй бол удаан дарж холбоосыг хуулна уу.</div>
         </div>
       </div>
     </section>
@@ -107,53 +112,34 @@
     <!-- APP OVERVIEW -->
     <section class="mt-8 sm:mt-10 grid gap-5">
       <h2 class="text-xl font-bold">Таны машины батерейг бодитоор, хаанаас ч оношлоно</h2>
-      <ul class="list-disc ml-5 space-y-2 text-slate-700 dark:text-slate-200">
+      <ul class="list-disc ml-5 space-y-2 text-slate-700">
         <li>Аппыг <b>гар утас</b> болон <b>машины Android хөгжим</b> дээр суулгаж ашиглана.</li>
         <li><b>Өөрийн болон бусдын</b> машины батерейг оношлох боломжтой.</li>
         <li>Засварын газарт очихоосоо өмнө <b>аль батерей асуудалтай</b> байгааг тодорхой харуулна (ECU дээр алдаа үүсгээд буй яг аль батарейг илрүүлнэ).</li>
         <li>Засварын газарт <b>ширхэгээр</b> эсвэл <b>комоор</b> солих үед газар дээр нь <b>тавьсан батарейн чанарыг</b> шалгаж баталгаажуулна.</li>
-        <li><b>Хөдөө, алслагдсан</b> газарт засварын төвөөс хол үед бүр хэрэгтэй — өөрөө оношлоод, дараа нь манайхаас <b>нарийвчилсан оношлогооны хувь</b>-тай батерейг авч өөрөө сольж болно.</li>
+        <li><b>Хөдөө, алслагдсан</b> газарт засварын төвөөс хол үед — өөрөө оношлоод, дараа нь манайхаас <b>нарийвчилсан оношлогооны хувь</b>-тай батерейг авч өөрөө сольж болно.</li>
       </ul>
     </section>
 
-    <!-- FEATURES -->
-    <section class="mt-8 sm:mt-10">
-      <h2 class="text-xl font-bold">Онцлогууд</h2>
-      <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="rounded-xl bg-white dark:bg-slate-900 shadow-soft p-4"><b>Бодит мониторинг</b> — Гүйдэл, SOC%, статусыг шууд харуулна.</div>
-        <div class="rounded-xl bg-white dark:bg-slate-900 shadow-soft p-4"><b>Алдаа илрүүлэлт</b> — ECU дээрх алдааг яг аль батарей гэдгийг заана.</div>
-        <div class="rounded-xl bg-white dark:bg-slate-900 shadow-soft p-4"><b>Оношлогооны тайлан</b> — Автоматаар гарч, ойлгомжтой байдлаар харуулна.</div>
-        <div class="rounded-xl bg-white dark:bg-slate-900 shadow-soft p-4"><b>Хөнгөн, рекламгүй</b> — Оффлайн горим дэмжинэ.</div>
-      </div>
-    </section>
-
-    <!-- OBDII -->
-    <section class="mt-8 sm:mt-10 rounded-2xl p-5 sm:p-7 shadow-soft bg-white dark:bg-slate-900">
-      <h2 class="text-xl font-bold">OBDII төхөөрөмж — оношлогоог бүрэн болгоно</h2>
-      <p class="mt-2 text-slate-700 dark:text-slate-200">OBDII төхөөрөмж <b>₮40,000</b>. Ашгийн <b>10%</b> нь хүүхдийн хандивт шилжинэ. Апп + OBDII хосолсноор оношлогоо илүү <b>нарийвчлалтай</b>, <b>хурдан</b> болно.</p>
-    </section>
-
-    <!-- HOW-TO / HELP 24/7 -->
+    <!-- HOW TO -->
     <section class="mt-8 sm:mt-10">
       <div class="flex items-center justify-between">
         <h2 class="text-xl font-bold">Хэрхэн оношлох вэ?</h2>
-        <span class="text-sm text-emerald-700 dark:text-emerald-300 font-medium">24/7 зөвлөгөө, тусламж</span>
+        <span class="text-sm text-emerald-700 font-medium">24/7 зөвлөгөө, тусламж</span>
       </div>
 
       <div class="mt-4 space-y-3">
-        <!-- Step 1 -->
-        <details class="group rounded-xl bg-white dark:bg-slate-900 shadow-soft p-4" open>
+        <details class="group rounded-xl bg-white shadow-soft p-4" open>
           <summary class="cursor-pointer select-none font-semibold">1. Холболт амжилттай болсон эсэхийг шалгах</summary>
-          <div class="mt-2 text-slate-700 dark:text-slate-200">
-            OBDII-г холбоод аппыг нээнэ. <b>Төлөв</b> хэсэгт <b>“Танигдсан”</b> гэж гарч, <b>GEN: GEN-2 / GEN-3</b> харагдах ёстой.<br/>
-            <img src="conok.png" alt="Холболт танигдсан төлөв" class="mt-3 w-full rounded-lg border border-slate-200 dark:border-slate-700"/>
+          <div class="mt-2 text-slate-700">
+            OBDII-г холбоод аппыг нээнэ. <b>Төлөв</b> хэсэгт <b>“Танигдсан”</b> гэж гарч, <b>GEN: GEN-2 / GEN-3</b> харагдах ёстой.
+            <img src="conok.png" alt="Холболт танигдсан төлөв" class="mt-3 w-full rounded-lg border border-slate-200"/>
           </div>
         </details>
 
-        <!-- Step 2 -->
-        <details class="group rounded-xl bg-white dark:bg-slate-900 shadow-soft p-4">
+        <details class="group rounded-xl bg-white shadow-soft p-4">
           <summary class="cursor-pointer select-none font-semibold">2. Оношлогооны бэлтгэл</summary>
-          <div class="mt-2 text-slate-700 dark:text-slate-200 space-y-2">
+          <div class="mt-2 text-slate-700 space-y-2">
             <p><b>Monitor</b> таб дээр бодит өгөгдлөө шалгана. Хэрэв батерейн алдаа асаалттай бол <b>Хэрэглүүр → “Батерей алдаа арилгах”</b> товчийг түр хэрэглэнэ.</p>
             <ol class="list-decimal ml-5 space-y-1">
               <li>Паар/AC-г <b>LO</b> буюу хамгийн бага дээр тавина.</li>
@@ -172,64 +158,36 @@
           </div>
         </details>
 
-        <!-- Step 3 -->
-        <details class="group rounded-xl bg-white dark:bg-slate-900 shadow-soft p-4">
+        <details class="group rounded-xl bg-white shadow-soft p-4">
           <summary class="cursor-pointer select-none font-semibold">3. Үр дүн</summary>
-          <div class="mt-2 text-slate-700 dark:text-slate-200">
+          <div class="mt-2 text-slate-700">
             Машин асах үед оношлогооны тайлан автоматаар гарч ирнэ — асуудалтай <b>яг аль батерей</b> болохыг харуулна.
-            <img src="diagok.png" alt="Оношлогооны үр дүн" class="mt-3 w-full rounded-lg border border-slate-200 dark:border-slate-700"/>
+            <img src="diagok.png" alt="Оношлогооны үр дүн" class="mt-3 w-full rounded-lg border border-slate-200"/>
           </div>
         </details>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="mt-8 sm:mt-10">
-      <h2 class="text-xl font-bold">Түгээмэл асуулт</h2>
-      <div class="mt-3 space-y-3">
-        <details class="rounded-xl bg-white dark:bg-slate-900 shadow-soft p-4">
-          <summary class="font-semibold cursor-pointer">Play Protect анхааруулбал яах вэ?</summary>
-          <p class="mt-2 text-slate-700 dark:text-slate-200">Апп гарын үсэгтэй. Доорх <b>SHA-256</b> чекзамтай тулгаад суулгана уу. <i>Install anyway</i> сонгож болно.</p>
-        </details>
-        <details class="rounded-xl bg-white dark:bg-slate-900 shadow-soft p-4">
-          <summary class="font-semibold cursor-pointer">Таталт хаагдах эсвэл удах?</summary>
-          <p class="mt-2 text-slate-700 dark:text-slate-200">Утсан дээрээ <b>Chrome</b>-оор нээгээд татаж үзээрэй.</p>
-        </details>
-        <details class="rounded-xl bg-white dark:bg-slate-900 shadow-soft p-4">
-          <summary class="font-semibold cursor-pointer">Ямар Android дэмждэг вэ?</summary>
-          <p class="mt-2 text-slate-700 dark:text-slate-200"><b>Android 8.0 (API 26)+</b>. Машины Android хөгжим дээр мөн ажиллана.</p>
-        </details>
-        <details class="rounded-xl bg-white dark:bg-slate-900 shadow-soft p-4">
-          <summary class="font-semibold cursor-pointer">Дэмжлэг хэдийд вэ?</summary>
-          <p class="mt-2 text-slate-700 dark:text-slate-200"><b>24/7</b> чат/утасны зөвлөгөө үзүүлнэ.</p>
-        </details>
-        <details class="rounded-xl bg-white dark:bg-slate-900 shadow-soft p-4">
-          <summary class="font-semibold cursor-pointer">Батерейг өөрөө сольж болох уу?</summary>
-          <p class="mt-2 text-slate-700 dark:text-slate-200">Болно. Бид <b>нарийвчилсан оношлогооны хувь</b>-тай батерейг санал болгож, суурилуулах зааврыг өгнө.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- TRUST / FOOTER -->
-    <footer class="mt-10 sm:mt-12 text-center text-sm text-slate-500 dark:text-slate-400">
+    <!-- FOOTER -->
+    <footer class="mt-10 sm:mt-12 text-center text-sm text-slate-500">
       <p>© Таны байгууллага. Бүх эрх хуулиар хамгаалагдсан.</p>
     </footer>
   </main>
 
-  <!-- Sticky Download Bar (mobile-first) -->
+  <!-- Sticky Download Bar (mobile) -->
   <div id="stickyBar" class="fixed inset-x-0 bottom-3 z-50 px-4 sm:px-0 hidden">
     <div class="max-w-3xl mx-auto">
-      <div class="shadow-soft rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur border border-slate-200 dark:border-slate-700 flex items-center justify-between p-3">
-        <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Бэлэн бол татаж суулгаарай</div>
+      <div class="shadow-soft rounded-2xl bg-white/90 backdrop-blur border border-slate-200 flex items-center justify-between p-3">
+        <div class="text-xs sm:text-sm text-slate-600">Бэлэн бол татаж суулгаарай</div>
         <div class="flex items-center gap-2">
           <a id="stickyDownload" href="#" class="inline-flex items-center gap-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-medium px-4 py-2">APK татах</a>
-          <a id="stickyNotes" href="#" class="text-sky-700 dark:text-sky-300 underline underline-offset-4 text-xs">Release notes</a>
+          <a id="stickyNotes" href="#" class="text-amber-700 underline underline-offset-4 text-xs">Release notes</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Auto-fill from GitHub Releases (UNCHANGED LINKS LOGIC) -->
+  <!-- GitHub Releases auto-fill (татах холбоосууд өөрчлөгдөхгүй) -->
   <script>
     (async function () {
       const repo = "Bayasgalan9999/myapp-download";
@@ -237,41 +195,33 @@
         const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, {
           headers: { "Accept": "application/vnd.github+json" }
         });
-        if (!res.ok) return; // keep fallback
+        if (!res.ok) return;
         const rel = await res.json();
 
-        // Fill version/date
         const v = rel.tag_name || "v1.0.0";
         const dt = rel.published_at ? new Date(rel.published_at).toISOString().slice(0,10) : "";
         document.getElementById("version").textContent = v;
         if (dt) document.getElementById("updated").textContent = dt;
 
-        // Find APK asset
         const asset = (rel.assets || []).find(a => /\.apk$/i.test(a.name));
         if (asset) {
-          // Update download link + QR + size
           const url = asset.browser_download_url;
-          document.getElementById("downloadBtn").href = url; // ORIGINAL ID kept
+          document.getElementById("downloadBtn").href = url;
           document.getElementById("stickyDownload").href = url;
           document.getElementById("qr").src =
             `https://api.qrserver.com/v1/create-qr-code/?size=224x224&data=${encodeURIComponent(url)}`;
           document.getElementById("filesize").textContent =
             (asset.size / (1024*1024)).toFixed(1) + " MB";
-
-          // Show download count badge
           if (typeof asset.download_count === "number") {
             document.getElementById("downloadCount").textContent = asset.download_count.toString();
             document.getElementById("dlBadge").classList.remove("hidden");
           }
         }
-        // Release notes link
         if (rel.html_url) {
           document.getElementById("releaseNotesLink").href = rel.html_url;
           document.getElementById("stickyNotes").href = rel.html_url;
         }
-      } catch (e) {
-        // silent fallback if API rate limit hits
-      }
+      } catch (e) { /* silent fallback */ }
     })();
 
     // Copy checksum
@@ -286,20 +236,16 @@
       }
     });
 
-    // Sticky bar: show after slight scroll
+    // Sticky bar toggle
     (function(){
       const sticky = document.getElementById('stickyBar');
       const mainBtn = document.getElementById('downloadBtn');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          // If main download button is visible, hide sticky; else show
-          if (entry.isIntersecting) {
-            sticky.classList.add('hidden');
-          } else {
-            sticky.classList.remove('hidden');
-          }
+          if (entry.isIntersecting) sticky.classList.add('hidden');
+          else sticky.classList.remove('hidden');
         })
-      }, { root: null, threshold: 0, rootMargin: "0px" });
+      }, { threshold: 0 });
       if (mainBtn) observer.observe(mainBtn);
     })();
   </script>
