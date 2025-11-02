@@ -136,6 +136,73 @@
       </div>
     </section>
 
+    <!-- PAYMENT INFO (NEW) -->
+    <section id="payment" class="mt-8 rounded-2xl shadow-soft card p-5 sm:p-6">
+      <div class="rounded-xl p-4 text-center text-white font-semibold bg-gradient-to-r from-emerald-500 to-lime-500">
+        Аппаа татаж аваад суулгасны дараа <u>төлбөрөө хийгээрэй!</u>
+      </div>
+
+      <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- Prices -->
+        <div class="rounded-xl border" style="border-color:var(--line)">
+          <div class="p-4">
+            <div class="text-lg font-semibold text-slate-800">Төлбөр</div>
+            <ul class="mt-3 space-y-2 text-slate-700">
+              <li class="flex items-center justify-between">
+                <span>Апп лиценз</span>
+                <span class="font-bold text-emerald-600">₮39,000</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>OBDII захиалга</span>
+                <span class="font-bold text-emerald-600">₮39,000</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bank -->
+        <div class="rounded-xl border" style="border-color:var(--line)">
+          <div class="p-4">
+            <div class="text-lg font-semibold text-slate-800">Төлбөр хийх</div>
+            <div class="mt-3 space-y-2 text-slate-700">
+              <div class="flex items-center justify-between">
+                <span>Банк:</span><strong>ХААН БАНК</strong>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>IBAN:</span>
+                <span class="mono" id="iban">500005300</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>Данс:</span>
+                <span class="mono" id="acct">5011203810</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>Хүлээн авагч:</span><strong>БААСАНБАЯР ОЮУНЭРДЭНЭ</strong>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>Гүйлгээний утга:</span><span class="mono">УТАСНЫ ДУГААР</span>
+              </div>
+
+              <!-- Copy buttons -->
+              <div class="pt-2 flex flex-wrap gap-2">
+                <button type="button" data-copy="#iban" class="copybtn inline-flex items-center rounded-md px-3 py-1.5 text-sm text-white" style="background:var(--accent)">IBAN хуул</button>
+                <button type="button" data-copy="#acct" class="copybtn inline-flex items-center rounded-md px-3 py-1.5 text-sm text-white" style="background:var(--accent)">Данс хуул</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contacts -->
+      <div class="mt-5 rounded-xl bg-white/80 border p-4 text-slate-700" style="border-color:var(--line)">
+        <div class="font-semibold mb-2">Холбоо барих</div>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <div>📞 8000-9006, 8893-6923</div>
+          <a href="https://www.facebook.com/zuw.onoshogoo" target="_blank" rel="noopener" class="link-accent underline">Facebook чат</a>
+        </div>
+      </div>
+    </section>
+
     <!-- APP GALLERY -->
     <section class="mt-10">
       <h2 class="text-xl font-semibold mb-4 text-center">📱 Аппын танилцуулга</h2>
@@ -157,10 +224,20 @@
     </footer>
   </main>
 
-  <!-- (Optional) sticky bar could be re-added later; links unchanged -->
+  <!-- Copy buttons -->
   <script>
-    // Copy checksum
     document.addEventListener('click', (e) => {
+      if (e.target && e.target.matches('.copybtn')) {
+        const sel = e.target.getAttribute('data-copy');
+        const el = document.querySelector(sel);
+        if (el) {
+          const text = el.textContent.trim();
+          navigator.clipboard.writeText(text).then(() => {
+            e.target.textContent = 'Хууллаа ✓';
+            setTimeout(() => { e.target.textContent = sel === '#iban' ? 'IBAN хуул' : 'Данс хуул'; }, 1200);
+          });
+        }
+      }
       if (e.target && e.target.id === 'copySha') {
         const text = document.getElementById('sha256').textContent.trim();
         navigator.clipboard.writeText(text).then(() => {
