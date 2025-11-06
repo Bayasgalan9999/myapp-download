@@ -205,6 +205,43 @@
     </footer>
   </main>
 
+  <!-- GitHub Releases-ээс автоматаар мэдээлэл татах (таталтын тоо, version, filesize, QR, release notes) -->
+  <script>
+  (async function () {
+    const repo = "Bayasgalan9999/myapp-download";
+    try {
+      const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, {
+        headers: { "Accept": "application/vnd.github+json" }
+      });
+      if (!res.ok) return;
+      const rel = await res.json();
+
+      const v  = rel.tag_name || "";
+      const dt = rel.published_at ? new Date(rel.published_at).toISOString().slice(0,10) : "";
+      if (v)  document.getElementById("version")?.replaceChildren(document.createTextNode(v));
+      if (dt) document.getElementById("updated")?.replaceChildren(document.createTextNode(dt));
+      if (rel.html_url) document.getElementById("releaseNotesLink")?.setAttribute("href", rel.html_url);
+
+      const asset = (rel.assets || []).find(a => /\.apk$/i.test(a.name));
+      if (asset) {
+        const url = asset.browser_download_url;
+        document.getElementById("downloadBtn")?.setAttribute("href", url);
+        const qr = document.getElementById("qr");
+        if (qr) qr.src = `https://api.qrserver.com/v1/create-qr-code/?size=224x224&data=${encodeURIComponent(url)}`;
+        const mb = (asset.size / (1024*1024)).toFixed(1) + " MB";
+        document.getElementById("filesize")?.replaceChildren(document.createTextNode(mb));
+
+        if (typeof asset.download_count === "number") {
+          document.getElementById("downloadCount")?.replaceChildren(document.createTextNode(String(asset.download_count)));
+          document.getElementById("dlBadge")?.classList.remove("hidden");
+        }
+      }
+    } catch (e) {
+      /* silent fallback */
+    }
+  })();
+  </script>
+
   <!-- Copy buttons -->
   <script>
     document.addEventListener('click', (e) => {
