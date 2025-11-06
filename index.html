@@ -205,36 +205,62 @@
     </footer>
   </main>
 
-  <!-- GitHub Releases-ээс автоматаар мэдээлэл татах (таталтын тоо, version, filesize, QR, release notes) -->
+  <!-- GitHub Releases: бүх release-үүдийн APK таталтыг нийлбэрлэж + суурь тоо нэмж харуулах -->
   <script>
   (async function () {
     const repo = "Bayasgalan9999/myapp-download";
+
+    // Хуучин release-үүд GitHub дээр байхгүй (шинэчлээд 0 болсон) тохиолдолд энд суурь таталтаа оруул.
+    // Хэрэв хуучин release-үүд байж, API нийлбэрлээд өгч байвал 0 гэж үлдээгээрэй.
+    const BASE_OFFSET = 900; // <-- өмнөх 900 таталтыг нэмэх
+
     try {
-      const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, {
-        headers: { "Accept": "application/vnd.github+json" }
-      });
-      if (!res.ok) return;
-      const rel = await res.json();
+      // --- BÜKH RELEASE-ИЙГ ТАТАЖ, APK ASSET-ИЙН ТАТАЛТЫГ НИЙЛБЭРЛЭХ ---
+      let page = 1, totalDownloads = 0, latest = null;
+      while (true) {
+        const r = await fetch(
+          `https://api.github.com/repos/${repo}/releases?per_page=100&page=${page}`,
+          { headers: { "Accept": "application/vnd.github+json" } }
+        );
+        if (!r.ok) break;
+        const arr = await r.json();
+        if (!Array.isArray(arr) || arr.length === 0) break;
 
-      const v  = rel.tag_name || "";
-      const dt = rel.published_at ? new Date(rel.published_at).toISOString().slice(0,10) : "";
-      if (v)  document.getElementById("version")?.replaceChildren(document.createTextNode(v));
-      if (dt) document.getElementById("updated")?.replaceChildren(document.createTextNode(dt));
-      if (rel.html_url) document.getElementById("releaseNotesLink")?.setAttribute("href", rel.html_url);
+        if (!latest) latest = arr[0]; // newest-first
 
-      const asset = (rel.assets || []).find(a => /\.apk$/i.test(a.name));
-      if (asset) {
-        const url = asset.browser_download_url;
-        document.getElementById("downloadBtn")?.setAttribute("href", url);
-        const qr = document.getElementById("qr");
-        if (qr) qr.src = `https://api.qrserver.com/v1/create-qr-code/?size=224x224&data=${encodeURIComponent(url)}`;
-        const mb = (asset.size / (1024*1024)).toFixed(1) + " MB";
-        document.getElementById("filesize")?.replaceChildren(document.createTextNode(mb));
-
-        if (typeof asset.download_count === "number") {
-          document.getElementById("downloadCount")?.replaceChildren(document.createTextNode(String(asset.download_count)));
-          document.getElementById("dlBadge")?.classList.remove("hidden");
+        for (const rel of arr) {
+          for (const a of (rel.assets || [])) {
+            if (/\.apk$/i.test(a.name)) totalDownloads += (a.download_count || 0);
+          }
         }
+        if (arr.length < 100) break;
+        page++;
+      }
+
+      // --- ХАМГИЙН СҮҮЛИЙН RELEASE-ИЙН МЭДЭЭЛЛЭЭР UI-Г ДҮҮРГЭХ ---
+      if (latest) {
+        const v  = latest.tag_name || "";
+        const dt = latest.published_at ? new Date(latest.published_at).toISOString().slice(0,10) : "";
+        if (v)  document.getElementById("version")?.replaceChildren(document.createTextNode(v));
+        if (dt) document.getElementById("updated")?.replaceChildren(document.createTextNode(dt));
+        if (latest.html_url) document.getElementById("releaseNotesLink")?.setAttribute("href", latest.html_url);
+
+        const asset = (latest.assets || []).find(a => /\.apk$/i.test(a.name));
+        if (asset) {
+          const url = asset.browser_download_url;
+          document.getElementById("downloadBtn")?.setAttribute("href", url);
+          const qr = document.getElementById("qr");
+          if (qr) qr.src = `https://api.qrserver.com/v1/create-qr-code/?size=224x224&data=${encodeURIComponent(url)}`;
+          const mb = (asset.size / (1024*1024)).toFixed(1) + " MB";
+          document.getElementById("filesize")?.replaceChildren(document.createTextNode(mb));
+        }
+      }
+
+      // --- НИЙЛБЭР + OFFSET-ИЙГ BADGE ДЭЭР ХАРУУЛАХ ---
+      const shown = totalDownloads + BASE_OFFSET;
+      if (!isNaN(shown)) {
+        document.getElementById("downloadCount")?.replaceChildren(document.createTextNode(String(shown)));
+        document.getElementById("dlBadge")?.classList.remove("hidden");
       }
     } catch (e) {
       /* silent fallback */
@@ -257,12 +283,16 @@
         }
       }
       if (e.target && e.target.id === 'copySha') {
-        const text = document.getElementById('sha256').textContent.trim();
-        navigator.clipboard.writeText(text).then(() => {
-          const msg = document.getElementById('copyShaMsg');
-          msg.classList.remove('hidden');
-          setTimeout(() => msg.classList.add('hidden'), 1500);
-        });
+        const text = document.getElementById('sha256')?.textContent?.trim() || '';
+        if (text) {
+          navigator.clipboard.writeText(text).then(() => {
+            const msg = document.getElementById('copyShaMsg');
+            if (msg) {
+              msg.classList.remove('hidden');
+              setTimeout(() => msg.classList.add('hidden'), 1500);
+            }
+          });
+        }
       }
     });
   </script>
